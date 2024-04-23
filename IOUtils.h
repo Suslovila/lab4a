@@ -23,3 +23,6 @@ void print_t(Node *tree);
 char *copyString(char *string);
 
 #endif //LAB3_IOUTILS_H
+
+
+// kgmelkgmeglkermglekrmgerlkgmerlkg

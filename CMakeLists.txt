@@ -10,8 +10,6 @@ add_executable(lab4a main.c
         TreeGenerated.c
         TreeGen2.c
         TreeGen3.c
-        IOUtils.h
         IOUtils.c
         IOUtils.h
-        main2.c
         main2.c)
