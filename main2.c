@@ -28,30 +28,32 @@ char *randomString(int length) {
 int D_Timing() {
     Node *root = NULL;
     int keyLength = 40;
-    int keyIterAmount = 1000000;
+    int keyIterAmount = 100000;
     char* keys[keyIterAmount];
-    int n = 10, k, cnt = 1000000;
+    int n = 10;
     clock_t first, last;
     srand(time(NULL));
     while (n-- > 0) {
         for(int i = 0; i < keyIterAmount; i++){
             keys[i] = randomString(keyLength);
         }
-        for (int index = 0; index < cnt; index++) {
+        for (int index = 0; index < keyIterAmount; index++) {
             char* randomStr = randomString(keyLength);
             root = insert(root, randomStr, 454);
         }
         int m = 0;
         first = clock();
-        for (int i = 0; i < 10000; ++i) {
+        for (int i = 0; i < keyIterAmount; ++i) {
             if (search(root, keys[i], 0) != NULL) {
                 ++m;
             }
-            free(keys[i]);
         }
         last = clock();
         printf("%d items was found\n", m);
-        printf("test #%d, number of nodes = %d, time = %f\n", 10 - n, (10 - n) * cnt, ((float)(last - first)) / CLOCKS_PER_SEC);
+        printf("test #%d, number of nodes = %d, time = %f\n", 10 - n, (10 - n) * keyIterAmount, ((float)(last - first)) / CLOCKS_PER_SEC);
+    }
+    for(int i = 0; i < keyIterAmount; i++){
+        free(keys[i]);
     }
     printf("Freesged");
 
