@@ -16,9 +16,10 @@ int maxInt(int a, int b){
 
 char *randomString(int length) {
     char *result = malloc((length + 1) * sizeof(char));
+    int delta = 122 - 97;
     for (int i = 0; i < length; i++) {
-        int randomInt = abs(rand()) % 122;
-        result[i] = (char)(maxInt(97, randomInt));
+        int randomInt = 97 + (abs(rand()) % delta);
+        result[i] = (char)(randomInt);
     }
     result[length] = '\0';
     return result;
@@ -26,10 +27,10 @@ char *randomString(int length) {
 
 int D_Timing() {
     Node *root = NULL;
-    int keyLength = 3;
-    int keyIterAmount = 10000;
+    int keyLength = 40;
+    int keyIterAmount = 1000000;
     char* keys[keyIterAmount];
-    int n = 10, k, cnt = 100000;
+    int n = 10, k, cnt = 1000000;
     clock_t first, last;
     srand(time(NULL));
     while (n-- > 0) {
