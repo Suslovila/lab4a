@@ -27,7 +27,7 @@ char *randomString(int length) {
 
 int D_Timing() {
     Node *root = NULL;
-    int keyLength = 40;
+    int keyLength = 5;
     int keyIterAmount = 100000;
     char* keys[keyIterAmount];
     int n = 10;
@@ -43,6 +43,7 @@ int D_Timing() {
         }
         int m = 0;
         first = clock();
+        //todo: где-то беда с освобождением памяти?
         for (int i = 0; i < keyIterAmount; ++i) {
             if (search(root, keys[i], 0) != NULL) {
                 ++m;
