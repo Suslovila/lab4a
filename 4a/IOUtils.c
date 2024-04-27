@@ -185,3 +185,55 @@ char *readWordFromFile(FILE *file) {
 //    word = realloc(word, sizeof(char) * length);
     return word;
 }
+
+
+
+
+void printDotEdges(FILE *dotFile, Node *node) {
+    if (node == NULL) return;
+    if (node->left != NULL) {
+        fprintf(dotFile, "%s->%s\n", node->key, node->left->key);
+    }
+    if (node->right != NULL) {
+        fprintf(dotFile, "%s->%s\n", node->key, node->right->key);
+    }
+}
+
+
+void printTreeToFile(Node *root, FILE *file) {
+    if (root == NULL) {
+        return;
+    }
+    printDotEdges(file, root);
+    if (root->left != NULL) printTreeToFile(root->left, file);
+    if (root->right != NULL) printTreeToFile(root->right, file);
+}
+
+
+void printRecursiveNode(Node *root, FILE *dotFile) {
+    fprintf(dotFile, "digraph BinaryTree {\n");
+    printTreeToFile(root, dotFile);
+    fprintf(dotFile, "}\n");
+}
+
+
+int main() {
+    FILE *dotFile = fopen("binary_tree.dot", "w");
+    if (dotFile == NULL) {
+        printf("Error opening file\n");
+        return 1;
+    }
+    Node *root = NULL;
+    root = insert(root, copyString("baborigen"), 4);
+    root = insert(root, copyString("awake"), 455);
+    root = insert(root, copyString("gone"), 76);
+//    root = insert(root, copyString("wefwe"), 12);
+//    root = insert(root, copyString("wefwe"), 12);
+
+    printRecursiveNode(root, dotFile);
+
+    freeTree(root);
+    fclose(dotFile);
+
+    return 0;
+}

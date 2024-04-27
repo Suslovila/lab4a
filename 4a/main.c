@@ -12,25 +12,34 @@ void calc() {
     }
 }
 
-int main() {
-//    Node *root = NULL;
+
+
+
+
+
+
+
+
+
+//int main() {
+////    Node *root = NULL;
+////
+////    root = insert(root, "banana", 20);
+////    root = insert(root, "apple", 10);
+////    root = insert(root, copyString("apple"), 30);
+////    root = deleteNode(root, "apple", 1, 0);
+////    printTree(root, 1);
+////    printNode(search(root, "apple", -1));
+////    calc();
+////    D_Timing();
+//    FILE *file = handleOpeningFile("r");
+//    if (file != NULL) {
+//        Node* root = handleTextFileImport(file);
+//        printTreeVer2(root);
+//        freeTree(root);
+//        fclose(file);
+//    }
 //
-//    root = insert(root, "banana", 20);
-//    root = insert(root, "apple", 10);
-//    root = insert(root, copyString("apple"), 30);
-//    root = deleteNode(root, "apple", 1, 0);
-//    printTree(root, 1);
-//    printNode(search(root, "apple", -1));
-//    calc();
-//    D_Timing();
-    FILE *file = handleOpeningFile("r");
-    if (file != NULL) {
-        Node* root = handleTextFileImport(file);
-        printTreeVer2(root);
-        freeTree(root);
-        fclose(file);
-    }
-
-return 0;
-
-}
+//return 0;
+//
+//}
