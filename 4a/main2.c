@@ -27,9 +27,9 @@ char *randomString(int length) {
 
 int D_Timing() {
     Node *root = NULL;
-    int keyLength = 5;
-    int keyIterAmount = 100000;
-    char *keys[keyIterAmount];
+    int keyLength = 8;
+    int keyIterAmount = 1000000;
+    char **keys = malloc(sizeof(char *) * keyIterAmount);
     int n = 10;
     clock_t first, last;
     srand(time(NULL));
@@ -54,7 +54,7 @@ int D_Timing() {
         last = clock();
         printf("%d items was found\n", m);
         printf("test #%d, number of nodes = %d, time = %f\n", 10 - n, (10 - n) * keyIterAmount,
-               ((float) (last - first)) / CLOCKS_PER_SEC);
+               ((float) (last - first)));
     }
     for (int i = 0; i < keyIterAmount; i++) {
         free(keys[i]);
@@ -64,4 +64,23 @@ int D_Timing() {
     freeTree(root);
     printf("Freesged");
     return 1;
+}
+
+#define DELTA 10
+
+void printTreeRecursive(Node *root, int space) {
+    if (root == NULL)
+        return;
+    space += DELTA;
+    printTreeRecursive(root->right, space);
+    printf("\n");
+    for (int i = DELTA; i < space; i++) {
+        printf(" ");
+    }
+    printf("%d\n", root->value);
+    printTreeRecursive(root->left, space);
+}
+
+void printTreeVer2(Node *root) {
+    printTreeRecursive(root, 0);
 }

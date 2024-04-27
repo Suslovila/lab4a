@@ -4,13 +4,14 @@
 #include "IOUtils.h"
 
 
-void calc(){
+void calc() {
     FILE *file = handleOpeningFile("r");
     if (file != NULL) {
         calculateWordAmount(file);
         fclose(file);
     }
 }
+
 int main() {
 //    Node *root = NULL;
 //
@@ -20,8 +21,16 @@ int main() {
 //    root = deleteNode(root, "apple", 1, 0);
 //    printTree(root, 1);
 //    printNode(search(root, "apple", -1));
-
 //    calc();
-    D_Timing();
-    return 0;
+//    D_Timing();
+    FILE *file = handleOpeningFile("r");
+    if (file != NULL) {
+        Node* root = handleTextFileImport(file);
+        printTreeVer2(root);
+        freeTree(root);
+        fclose(file);
+    }
+
+return 0;
+
 }
