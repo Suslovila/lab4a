@@ -20,11 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e19218a-ca56-4396-8502-12ca182146c8" name="Changes" comment="added dialog menu">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryTree.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainWithDialog.c" beforeDir="false" afterPath="$PROJECT_DIR$/mainWithDialog.c" afterDir="false" />
-    </list>
+    <list default="true" id="6e19218a-ca56-4396-8502-12ca182146c8" name="Changes" comment="added dialog menu" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +88,7 @@
       <workItem from="1714222570819" duration="4754000" />
       <workItem from="1714237275350" duration="2953000" />
       <workItem from="1714285437188" duration="3308000" />
-      <workItem from="1714295423012" duration="4506000" />
+      <workItem from="1714295423012" duration="5390000" />
     </task>
     <task id="LOCAL-00001" summary="added graphvis">
       <option name="closed" value="true" />
