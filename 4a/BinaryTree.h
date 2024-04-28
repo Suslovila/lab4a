@@ -23,4 +23,5 @@ Node *search(Node *root, char *key, int instance);
 void freeTree(Node *root);
 void freeNode(Node* node);
 void calculateWordAmount(FILE* file);
+void printTreeVer2(Node *root);
 #endif //LAB4A_BINARYTREE_H

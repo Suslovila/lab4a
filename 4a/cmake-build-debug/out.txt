@@ -1,0 +1,7 @@
+digraph BinaryTree {
+regerg->ergerg
+regerg->rthrht
+ergerg->;yujyu;lkuy
+ergerg->hrhrthmango
+hrhrthmango->erthsvsv
+}

@@ -97,26 +97,8 @@ Node *insert(Node *underRoot, char *key, unsigned int value) {
     int cmp = strcmp(key, underRoot->key);
     if (cmp < 0) {
         underRoot->left = insert(underRoot->left, key, value);
-    } else if (cmp > 0) {
+    } else {
         underRoot->right = insert(underRoot->right, key, value);
-    } else if (cmp == 0) {
-        Node *siblingChecker = underRoot->right;
-        if (siblingChecker == NULL || (siblingChecker != NULL && strcmp(siblingChecker->key, key) != 0)) {
-            Node *newNode = createNode(key, value);
-            newNode->right = underRoot->right;
-            newNode->left = underRoot->left;
-            underRoot->right = newNode;
-            return underRoot;
-        }
-
-        while (siblingChecker->right != NULL && strcmp(siblingChecker->right->key, key) == 0) {
-            siblingChecker = siblingChecker->right;
-        }
-        Node *newNode = createNode(key, value);
-        newNode->right = siblingChecker->right;
-        newNode->left = siblingChecker->left;
-        siblingChecker->right = newNode;
-        return underRoot;
     }
     return underRoot;
 }
@@ -248,15 +230,9 @@ void visitTree(Node *root) {
     if (root == NULL) {
         return;
     }
-    int count = 1;
-    Node *siblingChecker = root;
-    while (siblingChecker->right != NULL && strcmp(root->key, siblingChecker->right->key) == 0) {
-        count += 1;
-        siblingChecker = siblingChecker->right;
-    }
-    printf("the word: %s appears %d times\n", root->key, count);
+    printf("the word: %s appears %d times\n", root->key, root->value);
     visitTree(root->left);
-    visitTree(siblingChecker->right);
+    visitTree(root->right);
 
 }
 
@@ -272,14 +248,19 @@ void calculateWordAmount(FILE *file) {
     while (word != NULL) {
         toLowerStr(word);
         if (strcmp(word, "") != 0) {
-            tree = insert(tree, word, 4354);
+            Node* node = search(tree, word, 0);
+            if(node != NULL) {
+                node->value = node->value + 1;
+            }
+            else{
+                tree = insert(tree, word, 1);
+            }
             word = readWordFromFile(file);
             continue;
         }
         free(word);
         word = readWordFromFile(file);
     }
-    print_t(tree);
     visitTree(tree);
     freeTree(tree);
 }

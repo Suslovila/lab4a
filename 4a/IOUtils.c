@@ -31,6 +31,8 @@ char *susReadline(const char *prompt) {
 }
 
 FILE *handleOpeningFile(char *interactionType) {
+    scanf("%*c");
+
     printf("Enter file name\n");
     char *fileName = susReadline("");
     if (fileName == NULL) {
@@ -89,7 +91,10 @@ Node *handleTextFileImport(FILE *file) {
         int value = 0;
         readLineFromTextFile(file, &key);
         fscanf(file, "%d\n", &value);
-        root = insert(root, key, value);
+        if(key == NULL) {
+            return root;
+        }
+            root = insert(root, key, value);
         flag = feof(file);
     }
 
