@@ -1,0 +1,20 @@
+# ninja log v5
+10	105	7360016761619705	CMakeFiles/lab4a.dir/DotIntegration.c.obj	26add4736fb107d8
+19	126	7360016761834646	CMakeFiles/lab4a.dir/mainWithDialog.c.obj	bf1373d0e7342eb3
+0	145	7360016762039659	CMakeFiles/lab4a.dir/IOUtils.c.obj	aa758dda53be13a2
+14	150	7360016762088439	CMakeFiles/lab4a.dir/main2.c.obj	4ad42599aca9d7fc
+5	174	7360016762342310	CMakeFiles/lab4a.dir/BinaryTree.c.obj	52b5ceecd2127f
+174	304	7360016763621588	lab4a.exe	47227ddfcad0bcb3
+2	104	7360017733135254	CMakeFiles/lab4a.dir/BinaryTree.c.obj	52b5ceecd2127f
+104	196	7360017734030798	lab4a.exe	47227ddfcad0bcb3
+7	97	7360020080414980	CMakeFiles/lab4a.dir/mainWithDialog.c.obj	bf1373d0e7342eb3
+2	115	7360020080600489	CMakeFiles/lab4a.dir/BinaryTree.c.obj	52b5ceecd2127f
+115	209	7360020081508640	lab4a.exe	47227ddfcad0bcb3
+2	82	7360020780436208	CMakeFiles/lab4a.dir/mainWithDialog.c.obj	bf1373d0e7342eb3
+83	170	7360020781280830	lab4a.exe	47227ddfcad0bcb3
+2	124	7360021746848610	CMakeFiles/lab4a.dir/BinaryTree.c.obj	52b5ceecd2127f
+125	227	7360021747864177	lab4a.exe	47227ddfcad0bcb3
+2	117	7360028021239014	CMakeFiles/lab4a.dir/BinaryTree.c.obj	52b5ceecd2127f
+118	218	7360028022215526	lab4a.exe	47227ddfcad0bcb3
+2	88	7360028723935066	CMakeFiles/lab4a.dir/mainWithDialog.c.obj	bf1373d0e7342eb3
+89	188	7360028724891987	lab4a.exe	47227ddfcad0bcb3

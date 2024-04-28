@@ -72,24 +72,15 @@ int main() {
                     printf("Error reading key\n");
                 }
                 int version = 0;
-                if (handleInput(&version, INT_MIN, INT_MAX,
+                if (handleInput(&version, 0, INT_MAX,
                                 "Enter version: ",
                                 "Wrong input. Try again\n") == EOF) {
                     printf("got EOF\n");
                     free(key);
                     break;
                 }
-                Node* element = deleteNode(root, key, version, 0);
-                if (element == NULL) {
-                    printf("No element with key %s", key);
-                } else {
-                    printf("deleted: ");
-                    printNode(element);
-                    printf("\n");
-                    freeNode(element);
-                }
+                root = deleteNode(root, key, version, 0);
                 free(key);
-
                 printf("The root now is\n");
                 printTreeVer2(root);
                 break;

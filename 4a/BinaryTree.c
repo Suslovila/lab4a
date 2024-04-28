@@ -122,23 +122,19 @@ Node *deleteNode(Node *root, char *key, int version, int accumulated) {
     } else if (cmp > 0) {
         root->right = deleteNode(root->right, key, version, accumulated);
     } else {
-        if (version != accumulated) {
+        if (version > accumulated) {
             accumulated += 1;
             root->right = deleteNode(root->right, root->key, version, accumulated);
+        } else if (version < accumulated) {
+            return root;
         } else {
             if (root->left != NULL && root->right != NULL) {
-                if (accumulated == version) {
-                    Node *successor = findMin(root->right);
-                    free(root->key);
-                    root->key = successor->key;
-                    root->value = successor->value;
-                    free(successor);
-                    accumulated += 1;
-                    root->right = deleteNode(root->right, root->key, version, accumulated);
-                } else {
-                    accumulated += 1;
-                    root->right = deleteNode(root->right, key, version, accumulated);
-                }
+                Node *successor = findMin(root->right);
+                free(root->key);
+                root->key = successor->key;
+                root->value = successor->value;
+                accumulated += 1;
+                root->right = deleteNode(root->right, root->key, version, accumulated);
             } else {
                 if (root->left != NULL) {
                     root = root->left;
@@ -248,11 +244,10 @@ void calculateWordAmount(FILE *file) {
     while (word != NULL) {
         toLowerStr(word);
         if (strcmp(word, "") != 0) {
-            Node* node = search(tree, word, 0);
-            if(node != NULL) {
+            Node *node = search(tree, word, 0);
+            if (node != NULL) {
                 node->value = node->value + 1;
-            }
-            else{
+            } else {
                 tree = insert(tree, word, 1);
             }
             word = readWordFromFile(file);
