@@ -31,7 +31,7 @@ int main() {
                         "0 - handle export to dot file\n 1 - insert element\n2 - delete element by key\n3 - find element by key\n4 - import from file \n5 - print tree\n6 - calculate word amount\n7 - exit\n",
                         "Wrong index. Try again\n") == EOF) {
             printf("got EOF\n");
-            return EOF;
+            break;
         }
         switch (mode) {
             case 0: {

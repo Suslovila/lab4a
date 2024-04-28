@@ -4,7 +4,7 @@
 
 #ifndef LAB4A_BINARYTREE_H
 #define LAB4A_BINARYTREE_H
-
+#include "stdio.h"
 typedef struct Node {
     char *key;
     unsigned int value;

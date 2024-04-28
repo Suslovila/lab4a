@@ -141,6 +141,7 @@ Node *deleteNode(Node *root, char *key, int version, int accumulated) {
                 } else if (root->right != NULL) {
                     root = root->right;
                 } else {
+                    freeNode(root);
                     root = NULL;
                 }
             }
