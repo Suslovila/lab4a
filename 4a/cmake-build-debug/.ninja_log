@@ -1,9 +1,0 @@
-# ninja log v5
-82	165	7359930048564174	lab4a.exe	47227ddfcad0bcb3
-3	90	7359407387752818	CMakeFiles/lab4a.dir/main.c.obj	41bb58fdf3a4490
-7	106	7359889691466117	CMakeFiles/lab4a.dir/DotIntegration.c.obj	26add4736fb107d8
-11	299	7359407229573618	CMakeFiles/lab4a.dir/BinaryTree.c.obj	52b5ceecd2127f
-1	86	7359894082707403	CMakeFiles/lab4a.dir/IOUtils.c.obj	aa758dda53be13a2
-21	279	7359407229333666	CMakeFiles/lab4a.dir/main2.c.obj	4ad42599aca9d7fc
-2	81	7359930047763975	CMakeFiles/lab4a.dir/mainWithDialog.c.obj	bf1373d0e7342eb3
-0	138	7359986246495320	build.ninja	a84a33ade32ccdb9
